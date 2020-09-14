@@ -1,4 +1,5 @@
 import 'package:facebookclone/resources/colors.dart';
+import 'package:facebookclone/resources/strings.dart';
 import 'package:flutter/material.dart';
 
 
@@ -12,7 +13,7 @@ class _PasswordState extends State<Password> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Password', style: TextStyle(color: Colors.black)),
+        title: Text( AppStrings.password, style: TextStyle(color: Colors.black , fontWeight: FontWeight.bold)),
         backgroundColor: AppColors.white,
         iconTheme: IconThemeData(
           color: Colors.black,
@@ -28,17 +29,18 @@ class _PasswordState extends State<Password> {
             SizedBox(
               height: 120,
             ),
-            Text('Choose a Password',
-                style: TextStyle(color: Colors.black, fontSize: 20)),
+            Text(AppStrings.qPassword,
+                style: TextStyle(color: Colors.black, fontSize: 20 ,fontWeight: FontWeight.bold)),
             SizedBox(
               height: 30,
             ),
 
             Container(
+//              same thing in email_screen
               width: 300,
               child: Flexible(
                 child: TextFormField(
-                  decoration: InputDecoration(labelText: 'Password'),
+                  decoration: InputDecoration(labelText: AppStrings.lPassword),
                 ),
               ),
             ),

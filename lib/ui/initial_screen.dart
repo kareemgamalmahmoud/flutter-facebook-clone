@@ -87,7 +87,7 @@ class InitialScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildButton(String st, Color background, Color textColor, Function onPressed) {
+  Widget  _buildButton(String st, Color background, Color textColor, Function onPressed) {
     return Container(
       width: double.infinity,
       height: 45,

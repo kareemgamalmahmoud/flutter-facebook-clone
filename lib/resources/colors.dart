@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class AppColors{
   static final textColor = Color(0xFF66676B);
   static final blueTextColor = Color(0xFF246FD5);
@@ -7,3 +9,4 @@ class AppColors{
   static final babyBlue = Color(0xFFE7F3FF);
   static final white = Color(0xFFFFFFFF);
 }
+

@@ -62,10 +62,34 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "date_format",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/date_format-1.0.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///C:/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "2.2"
+    },
+    {
+      "name": "flutter_cupertino_date_picker",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_cupertino_date_picker-1.0.26+2",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
+    },
+    {
+      "name": "flutter_datetime_picker",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_datetime_picker-1.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "flutter_masked_text",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_masked_text-0.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "1.23"
     },
     {
       "name": "flutter_test",
@@ -176,7 +200,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-09-09T17:45:59.366327Z",
+  "generated": "2020-09-14T18:08:19.594329Z",
   "generator": "pub",
   "generatorVersion": "2.8.4"
 }
