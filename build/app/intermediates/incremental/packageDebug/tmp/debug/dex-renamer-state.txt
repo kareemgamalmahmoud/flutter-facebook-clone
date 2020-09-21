@@ -1,4 +1,4 @@
-#Mon Sep 14 21:22:53 EET 2020
+#Mon Sep 21 21:55:50 EET 2020
 base.0=F\:\\flutter_pj\\facebook_clone\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -4,6 +4,7 @@ import 'package:facebookclone/ui/auth/password.dart';
 
 import 'auth/birthday_screen.dart';
 import 'package:flutter/material.dart';
+import 'auth/login_screen.dart';
 import 'auth/signup_screen.dart';
 import 'initial_screen.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/gender': (BuildContext context) => Gender(),
         '/email': (BuildContext context) => Email(),
         '/password': (BuildContext context) => Password(),
+        '/Login_Screen': (BuildContext context) => Login_Screen(),
       },
     );
   }

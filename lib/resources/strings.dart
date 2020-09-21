@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class AppStrings{
   static final login = "Log In";
 
+  static final login_email = "Email or phone";
+  static final login_password = "Password";
+
   static final name = "Name";
   static final qName = "What\'s your name ?";
   static final firstName = "First Name ";
@@ -31,4 +34,5 @@ class AppStrings{
 
 class AssetStrings{
   static final logo = "assets/images/logo.png";
+  static final logo_text = "assets/images/logoText.png";
 }

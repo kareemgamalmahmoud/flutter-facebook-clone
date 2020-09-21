@@ -62,7 +62,7 @@ class InitialScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            _buildButton(AppStrings.login, AppColors.blue, AppColors.white, () {}),
+            _buildButton(AppStrings.login, AppColors.blue, AppColors.white, () {Navigator.pushNamed(context, "/Login_Screen");}),
 
             _buildButton(
               "Create New Facebook Account",

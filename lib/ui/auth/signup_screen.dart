@@ -12,6 +12,8 @@ class _SignupScreenState extends State<SignupScreen> {
   final _formKey = GlobalKey<FormState>();
   bool _visible = false;
 
+  static String worning = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +46,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   opacity: _visible ? 1.0 : 0.0,
                   duration: Duration(milliseconds: 500),
                   child: ListTile(
-                    title: Text('Please enter your first and last name ',
+                    title: Text(worning,
                         style: TextStyle(color: Colors.red, fontSize: 12)),
                     trailing: Icon(Icons.error , color: Colors.red,),
                   ),
@@ -92,7 +94,8 @@ class _SignupScreenState extends State<SignupScreen> {
             child: TextFormField(
               validator: (value){
                 if(value.isEmpty){
-                  return "first name !";
+                  worning = "first name !";
+                  return worning;
                 }
               },
               decoration: InputDecoration(labelText: AppStrings.firstName),
@@ -103,7 +106,8 @@ class _SignupScreenState extends State<SignupScreen> {
             child: TextFormField(
               validator: (value){
                 if(value.isEmpty){
-                  return "last name !";
+                  worning = "second name !";
+                  return worning;
                 }
               },
               decoration: InputDecoration(labelText: AppStrings.lastName),
