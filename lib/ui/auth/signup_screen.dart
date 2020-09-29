@@ -46,7 +46,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   opacity: _visible ? 1.0 : 0.0,
                   duration: Duration(milliseconds: 500),
                   child: ListTile(
-                    title: Text(worning,
+                    title: Text('Please enter your first name and last name',
                         style: TextStyle(color: Colors.red, fontSize: 12)),
                     trailing: Icon(Icons.error , color: Colors.red,),
                   ),

@@ -34,6 +34,12 @@ dependencies:
   date_format: ^1.0.9
   flutter_datetime_picker:
   flutter_masked_text:
+  http:
+  flutter_bloc:
+  equatable:
+  rxdart:
+  bloc:
+  json_annotation:
 
 dev_dependencies:
   flutter_test:

@@ -1,3 +1,6 @@
+import 'package:facebookclone/blocs/auth/auth/auth_bloc.dart';
+import 'package:facebookclone/blocs/auth/auth/auth_events.dart';
+import 'package:facebookclone/blocs/auth/auth/auth_states.dart';
 import 'package:facebookclone/resources/colors.dart';
 import 'package:facebookclone/resources/strings.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +16,27 @@ class Login_ScreenState extends State<Login_Screen> {
   final _formKey = GlobalKey<FormState>();
   bool _visible = false;
 
+  TextEditingController emailCtrl = TextEditingController();
+  TextEditingController passwordCtrl = TextEditingController();
+  bool showLoading = false;
+
+  AuthBloc _authBloc = AuthBloc();
+  String userName;
+
+
+  @override
+  void initState() {
+    _authBloc.subject.listen((AuthState state) {
+      if(state is UserIsLoggedIn){
+        setState(() {
+          userName = state.user.name;
+          showLoading = false;
+        });
+      }
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +47,7 @@ class Login_ScreenState extends State<Login_Screen> {
               height: 12,
             ),
             _buildLogo(),
+            userName!=null?Text("Hi $userName"):Container(),
             SizedBox(
               width: 300,
               child: AnimatedOpacity(
@@ -35,11 +60,12 @@ class Login_ScreenState extends State<Login_Screen> {
                 ),
               ),
             ),
-            _buildTextFields(),
+            _buildTextFields(emailCtrl ,passwordCtrl ),
             SizedBox(
               height: 20,
             ),
             _buildButtons(context),
+            showLoading ? CircularProgressIndicator() : Container(),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -86,9 +112,17 @@ class Login_ScreenState extends State<Login_Screen> {
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             _buildButton(
-                AppStrings.login, AppColors.blue, AppColors.white, () {!_formKey.currentState.validate() ? setState(() {
-              _visible = !_visible;
-            }) : Navigator.pushNamed(context, "/");}),
+                AppStrings.login, AppColors.blue, AppColors.white, () {
+      _authBloc
+          .dispatch(LoginTapped(emailCtrl.text, passwordCtrl.text));
+      setState(() {
+        showLoading=true;
+      });
+//                  !_formKey.currentState.validate() ? setState(() {
+//              _visible = !_visible;
+//            }) : Navigator.pushNamed(context, "/");
+//
+                }),
           ],
         ),
       ),
@@ -113,7 +147,7 @@ class Login_ScreenState extends State<Login_Screen> {
     );
   }
 
-  Widget _buildTextFields() {
+  Widget _buildTextFields(TextEditingController Ctrl1 , TextEditingController Ctrl2) {
     return Form(
       key: _formKey,
       child: SizedBox(
@@ -124,6 +158,7 @@ class Login_ScreenState extends State<Login_Screen> {
           children: <Widget>[
             Flexible(
               child: TextFormField(
+                controller: Ctrl1,
                 validator: (value) {
                   if (value.isEmpty) {
                     return "email !";
@@ -137,6 +172,7 @@ class Login_ScreenState extends State<Login_Screen> {
             ),
             Flexible(
               child: TextFormField(
+                controller: Ctrl2,
                 validator: (value) {
                   if (value.isEmpty) {
                     return "Password";
