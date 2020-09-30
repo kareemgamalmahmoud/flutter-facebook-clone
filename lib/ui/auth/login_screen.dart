@@ -23,11 +23,10 @@ class Login_ScreenState extends State<Login_Screen> {
   AuthBloc _authBloc = AuthBloc();
   String userName;
 
-
   @override
   void initState() {
     _authBloc.subject.listen((AuthState state) {
-      if(state is UserIsLoggedIn){
+      if (state is UserIsLoggedIn) {
         setState(() {
           userName = state.user.name;
           showLoading = false;
@@ -47,7 +46,7 @@ class Login_ScreenState extends State<Login_Screen> {
               height: 12,
             ),
             _buildLogo(),
-            userName!=null?Text("Hi $userName"):Container(),
+            userName != null ? Text("Hi $userName") : Container(),
             SizedBox(
               width: 300,
               child: AnimatedOpacity(
@@ -56,11 +55,14 @@ class Login_ScreenState extends State<Login_Screen> {
                 child: ListTile(
                   title: Text("Please enter your email and password",
                       style: TextStyle(color: Colors.red, fontSize: 12)),
-                  trailing: Icon(Icons.error , color: Colors.red,),
+                  trailing: Icon(
+                    Icons.error,
+                    color: Colors.red,
+                  ),
                 ),
               ),
             ),
-            _buildTextFields(emailCtrl ,passwordCtrl ),
+            _buildTextFields(emailCtrl, passwordCtrl),
             SizedBox(
               height: 20,
             ),
@@ -70,7 +72,7 @@ class Login_ScreenState extends State<Login_Screen> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.only(right: 85 , left: 85),
+                  padding: EdgeInsets.only(right: 85, left: 85),
                   child: Text(
                     'Sign Up for Facebook',
                     style: TextStyle(
@@ -111,18 +113,16 @@ class Login_ScreenState extends State<Login_Screen> {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            _buildButton(
-                AppStrings.login, AppColors.blue, AppColors.white, () {
-      _authBloc
-          .dispatch(LoginTapped(emailCtrl.text, passwordCtrl.text));
-      setState(() {
-        showLoading=true;
-      });
+            _buildButton(AppStrings.login, AppColors.blue, AppColors.white, () {
+              _authBloc.dispatch(LoginTapped(emailCtrl.text, passwordCtrl.text));
+              setState(() {
+                showLoading = true;
+              });
 //                  !_formKey.currentState.validate() ? setState(() {
 //              _visible = !_visible;
 //            }) : Navigator.pushNamed(context, "/");
 //
-                }),
+            }),
           ],
         ),
       ),
@@ -147,7 +147,8 @@ class Login_ScreenState extends State<Login_Screen> {
     );
   }
 
-  Widget _buildTextFields(TextEditingController Ctrl1 , TextEditingController Ctrl2) {
+  Widget _buildTextFields(
+      TextEditingController Ctrl1, TextEditingController Ctrl2) {
     return Form(
       key: _formKey,
       child: SizedBox(

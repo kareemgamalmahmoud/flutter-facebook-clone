@@ -1,6 +1,7 @@
 import 'package:facebookclone/ui/auth/email.dart';
 import 'package:facebookclone/ui/auth/gender_screen.dart';
 import 'package:facebookclone/ui/auth/password.dart';
+import 'package:facebookclone/ui/time_line_pakage/time_line_screen.dart';
 
 import 'auth/birthday_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
       routes: {
-        '/':(BuildContext context) => InitialScreen(),
+        '/':(BuildContext context) => HomePage(),
+//        '/':(BuildContext context) => InitialScreen(),
         '/signupScreen': (BuildContext context) => SignupScreen(),
         '/birthdayScreen': (BuildContext context) => BirthdayScreen(),
         '/gender': (BuildContext context) => Gender(),
