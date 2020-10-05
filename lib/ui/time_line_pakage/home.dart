@@ -31,48 +31,36 @@ Widget homepage()
                       makeStory(
                           storyImage: 'assets/images/images.jpg',
                           userImage: 'assets/images/download (3).jpg',
-                          userName: 'ايه في ايه'
+                          userName: 'Hi!'
                       ),
                       makeStory(
                           storyImage: 'assets/images/download (3).jpg',
                           userImage: 'assets/images/images.jpg',
-                          userName: 'يمحمد يمحروص'
+                          userName: 'mohamed mahros'
                       ),
                       makeStory(
                           storyImage: 'assets/images/downloadd.jpg',
                           userImage: 'assets/images/hqdefault.jpg',
-                          userName: 'الناحو'
+                          userName: 'Al naho'
                       ),
-//                          makeStory(
-//                              storyImage: 'assets/images/story/story-5.jpg',
-//                              userImage: 'assets/images/azamat-zhanisov.jpg',
-//                              userName: 'Azamat Zhanisov'
-//                          ),
                     ],
                   ),
                 ),
                 SizedBox(height: 40,),
                 makeFeed(
-                    userName: 'ياولا يا زعيم',
+                    userName: 'my lord',
                     userImage: 'assets/images/downloadd.jpg',
                     feedTime: '1 hr ago',
-                    feedText: 'الي مش هايعمل لايك علي كومنتاتي وفضيوهاتي و بوصطاتي هاديله الناحو عشان منه نرتاحو',
+                    feedText: 'share my posts and my photos and ....',
                     feedImage: 'assets/images/hqdefault.jpg'
                 ),
                 makeFeed(
-                    userName: 'محمد محروص',
+                    userName: 'hary boder',
                     userImage: 'assets/images/download.jpg',
                     feedTime: '3 mins ago',
-                    feedText: "تحيه اطر سته الا تلت",
+                    feedText: "how you doing ?",
                     feedImage: 'assets/images/download (2).jpg'
                 ),
-//                    makeFeed(
-//                        userName: 'Azamat Zhanisov',
-//                        userImage: 'assets/images/azamat-zhanisov.jpg',
-//                        feedTime: '3 mins ago',
-//                        feedText: "All the Lorem Ipsum generators on the Internet tend to repeat predefined.",
-//                        feedImage: 'assets/images/averie-woodard.jpg'
-//                    ),
               ],
             ),
           ),
